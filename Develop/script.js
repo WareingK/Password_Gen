@@ -40,17 +40,17 @@ function generatePassword() {
   if (includeUppercase) allChars += uppercaseChars;
   if (includeNumeric) allChars += numbericChars;
   if (includeSpecialChars) allChars += specialChars;
-  //Finally generate the password
+  //Finally generate the password randomly
   var generatedPassword = '';
   for (var i = 0; i < passwordLength; i++) {
     var randomIndex = Math.floor(Math.random() * allChars.length);
-    generatePassword += allChars.charAt(randomIndex);
+    generatedPassword += allChars.charAt(randomIndex);
   }
+
   return generatedPassword;
+
 }
 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// Show the password
